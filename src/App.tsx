@@ -6,16 +6,21 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 
 import { CssBaseline } from '@mui/material';
 import ThemeProvider from './theme/ThemeProvider';
+import SocketProvider from './contexts/SocketProvider';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const content = useRoutes(router);
 
   return (
     <ThemeProvider>
+      <SocketProvider>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <CssBaseline />
         {content}
+        <ToastContainer style={{ fontSize: 15 }} pauseOnFocusLoss={false} />
       </LocalizationProvider>
+      </SocketProvider>
     </ThemeProvider>
   );
 }
