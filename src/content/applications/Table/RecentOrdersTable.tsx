@@ -83,18 +83,18 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
     }
  
   }, [gameData])
-  if (currentPlayers) {
+  if (currentPlayers[1]) {
     console.log("    ok>>>>", currentPlayers[1])
     // currentPlayers.map((currentPlayer, index) => {
-    //   successAlert(currentPlayer[0])
+      
+    // console.log("    alert>>>>", currentPlayer)
+    //   successAlert(currentPlayers[1])
     // })
-    const temp = currentPlayers[1]
+    const temp = currentPlayers[1].toString()
+    successAlert(temp)
+    // const alert = temp.toString()
 
-    const alert = temp.toString()
-
-    console.log("    alert>>>>", alert)
-    successAlert(alert)
-
+   
   }
   return (
     <Card>
@@ -123,7 +123,7 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
           <TableBody>
             
             {currentPlayers.map((currentPlayer, index) => {
-              successAlert(currentPlayer)
+           
               return (
               <TableRow
                   
