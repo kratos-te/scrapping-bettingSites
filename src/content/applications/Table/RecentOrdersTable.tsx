@@ -70,31 +70,34 @@ const RecentOrdersTable: FC<RecentOrdersTableProps> = ({ cryptoOrders }) => {
   // }
 
   useEffect(() => {
-    console.log(gameData, "-- game data")
+    // console.log(gameData, "-- game data")
     if (gameData) {
       setCurrentPlayers(gameData.users);
-      console.log("    here>>>>", gameData.users)
-     
-      setForceFlag(forceFlag)
+      // console.log("    here>>>>", gameData.users)
+
+      setForceFlag(forceFlag);
       setTimeout(() => {
-        console.log("state ", currentPlayers)
+        console.log('state ', currentPlayers);
       }, 1000);
-      
     }
- 
-  }, [gameData])
+  }, [gameData]);
   if (currentPlayers[1]) {
-    console.log("    ok>>>>", currentPlayers[1])
+    console.log('    ok>>>>', currentPlayers[1]);
+    console.log('    !!!!!!>>>>', gameData.users[1]);
+    if (currentPlayers[1].toString() == gameData.users[1].toString()) {
+      console.log('shit');
+    } else {
+      console.log('great');
+      const temp = currentPlayers[1].toString();
+      successAlert(temp);
+    }
     // currentPlayers.map((currentPlayer, index) => {
-      
+
     // console.log("    alert>>>>", currentPlayer)
     //   successAlert(currentPlayers[1])
     // })
-    const temp = currentPlayers[1].toString()
-    successAlert(temp)
-    // const alert = temp.toString()
 
-   
+    // const alert = temp.toString()
   }
   return (
     <Card>
